@@ -10,9 +10,9 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 
-# Environment variables for Spotify API credentials
-SPOTIPY_CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID', 'c069f87a76c240ae81e293ef35b9b094')
-SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET', 'fcc4f2fa247148248713ffb090cd1a28')
+# Environment variables for Spotify API credentials generate SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET from Spotify Dev
+SPOTIPY_CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID', '')
+SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET', '')
 SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
 SCOPE = 'user-read-playback-state user-read-currently-playing'
 
@@ -75,6 +75,7 @@ def open_spotify_web():
 root = tk.Tk()
 root.title("Spotify Now Playing")
 
+# Theme
 style = Style(theme='solar')
 
 # Font styles
